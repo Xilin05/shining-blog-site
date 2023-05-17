@@ -19,15 +19,15 @@ export const enSidebar = sidebar({
     {
       text: '学习相关',
       icon: 'creative',
-      link: '学习相关/',
-      prefix: '学习相关/',
+      // link: 'study/',
+      prefix: 'study/',
       children: 'structure'
     },
     {
       text: '工作相关',
       icon: 'creative',
-      prefix: '工作相关/',
-      link: '工作相关/',
+      prefix: 'work/',
+      // link: 'work/',
       children: 'structure'
     }
     // 'intro',

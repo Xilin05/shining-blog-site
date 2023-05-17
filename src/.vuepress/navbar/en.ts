@@ -2,39 +2,39 @@ import { navbar } from 'vuepress-theme-hope'
 
 export const enNavbar = navbar([
   '/',
-  { text: '学习相关', icon: 'discover', link: '/学习相关/' },
+  {
+    text: '学习相关',
+    icon: 'read',
+    prefix: '/study/',
+    children: [
+      {
+        text: '分享',
+        prefix: 'sharing/',
+        children: [
+          {
+            text: '前端架构浅析',
+            link: 'frontArchitecture'
+          }
+        ]
+      }
+    ]
+  },
   {
     text: '工作相关',
-    icon: 'edit',
-    prefix: '/工作相关/',
+    icon: 'keyboard',
+    prefix: '/work/',
     children: [
       {
         text: '笔记',
-        icon: 'edit',
-        prefix: 'note/',
+        prefix: 'notes/',
         children: [
           {
             text: '线下费用模块梳理与总结',
-            icon: 'edit',
+            icon: 'note',
             link: 'offlineReplay'
           }
         ]
       }
-      // {
-      //   text: 'Banana',
-      //   icon: 'edit',
-      //   prefix: 'banana/',
-      //   children: [
-      //     {
-      //       text: 'Banana 1',
-      //       icon: 'edit',
-      //       link: '1'
-      //     },
-      //     '3'
-      //   ]
-      // },
-      // { text: 'Cherry', icon: 'edit', link: 'cherry' },
-      // 'tomato'
     ]
   },
   {

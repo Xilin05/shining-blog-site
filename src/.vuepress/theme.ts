@@ -44,12 +44,13 @@ export default hopeTheme(
         // sidebar
         sidebar: enSidebar,
 
-        footer: 'Default footer',
+        footer:
+          '<a href="https://beian.miit.gov.cn/" target="_blank" data-v-cd3c7b98="">粤ICP备2021132572号-1</a>',
 
         displayFooter: true,
 
         blog: {
-          description: '一位初级前端开发工程师',
+          description: '[2022届][深圳]前端开发工程师',
           intro: '/intro.html'
         },
 
@@ -91,8 +92,12 @@ export default hopeTheme(
       }
     },
 
+    editLink: false,
     plugins: {
-      blog: true,
+      // blog: true,
+      blog: {
+        excerptLength: 100
+      },
 
       // If you don’t need comment feature, you can remove following option
       // The following config is for demo ONLY, if you need comment feature, please generate and use your own config, see comment plugin documentation for details.
