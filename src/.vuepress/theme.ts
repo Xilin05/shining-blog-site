@@ -18,7 +18,7 @@ export default hopeTheme(
 
     logo: '/gradient_medium.png',
 
-    repo: 'Xilin05/shining98_blog',
+    // repo: 'Xilin05/shining98_blog',
 
     docsDir: 'docs',
 
