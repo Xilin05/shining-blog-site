@@ -1,5 +1,5 @@
 ---
-date: 2022-08-03
+date: 2022-08-18
 category:
   - 技术
   - 概念
@@ -50,13 +50,9 @@ excerptLength: 500
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**代码级：开发流程，代码规范，代码优化。**
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/9b612e98-760e-4163-935f-a950fdc5b825.png)
+![图 2.1 架构设计四层级](./assets/frontArchitecture/four-framework.png)
 
-<center>图一：架构设计四层级</center>
-
-[请至钉钉文档查看「流程图」](https://alidocs.dingtalk.com/i/nodes/em7AML0b9lBV25Q56zPjWnNyqOD6vwro?iframeQuery=anchorId%253DX02l6uusdy42xqqoagsvop)
-
-图二：ERP 前端架构设计图
+> 涉及敏感信息，故不贴出某企业自研发ERP架构图
 
 ### 1.  架构模式与技术/工具
 
@@ -66,13 +62,11 @@ excerptLength: 500
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码开发工具：Visual Studio Code；<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码协作管理：Coding；
 
-#### 工具/名词解释
+**工具/名词解释**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MVVM：vm 层（视图模型层）通过接口从后台 m 层（model 层）请求数据，vm 层继而和 v（view 层）实现数据的双向绑定。
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/53f584dc-6f5c-4693-bf10-9dbe3c930ea8.png)
-
-<center>图 2.1.1 MVVM 模式图解</center>
+![图 2.1.1 MVVM 模式图解](./assets/frontArchitecture/mvvm.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vue：是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue  采用自底向上增量开发的设计；<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Axios：用与发送 get、post 等请求的工具；<br />
@@ -80,9 +74,7 @@ excerptLength: 500
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vue-Router：Vue 全家桶中的路由工具，通过它来进行页面的跳转；<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vuex：一个专为 Vue 开发的状态管理模式，集中式地存储、管理应用的所有组件的状态；
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/ce545120-a81d-4b7b-90a0-e2f66a80a510.png)
-
-<center>图 2.1.2 Vuex 图解</center>
+![图 2.1.2 Vuex 图解](./assets/frontArchitecture/vuex.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElementPlus：饿了么团队出品的一套美观的 UI 框架，提高开发效率；<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eslint：代码检测、代码规范约束的工具；<br />
@@ -90,21 +82,17 @@ excerptLength: 500
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Husky：当我们本地进行 git commit 或 git push 等操作前，能够执行其它一些操作，比如进行 ESLint 检查，如果不通过，就不允许 commit 或 push；<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scss：样式预处理器，通过特定的写法，编译后形成正常的 css 文件，为 css 增加一些编程特性，完全兼容 css3，让 css 更加简洁、适应性更强，可读性更佳，更易于代码的维护等
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/7a6840ef-71a2-4cc9-9397-93df9117cc74.png)
-
-<center>图 2.1.3 css 与 scss 区别</center>
+![图 2.1.3 css 与 scss 区别](./assets/frontArchitecture/scss.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tailwind CSS：一个 CSS 样式库，它为我们提供了构建定制设计而无需使用自定义样式所需的所有构建块，在国外是一个比较热门的框架。
 
 - tailwind css 举例：
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/b8f926b6-3132-4f6f-9860-6e43ae3bba73.png)
-
-<center>图 2.1.4  使用 tailwind css  写法</center>
+![图 2.1.4  使用tailwind css写法](./assets/frontArchitecture/tailwindcss.png)
 
 ### 2.  前端开发规范约定
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前期技术、工具选型确定后，还需要协商好一致的规范，需要有统一的规范，部门优秀的师兄们已经协商好了前端小组的代码规范，详情可参考：[《前端代码规范》](https://docs.dingtalk.com/api/doc/transit?spaceId=5358792513&dentryId=52979790041&queryString=utm_source%3Ddingdoc_doc%26utm_medium%3Ddingdoc_doc_plugin_card)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前期技术、工具选型确定后，还需要协商好一致的规范，需要有统一的规范。
 
 问：为什么需要规范？
 
@@ -127,8 +115,7 @@ excerptLength: 500
 
 #### 3.2  项目流程
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目开发过程中，需要按照一定的流程进行进度推进，并实时监督。<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erp 系统的开发流程可以参考：[《ERP 系统前端开发流程——面向应届生》](https://alidocs.dingtalk.com/api/doc/transit?spaceId=5358792513&dentryId=64838076925&corpId=dingffb4cf1b60a782bff2c783f7214b6d69)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目开发过程中，需要按照一定的流程进行进度推进，并实时监督，每个企业有属于自己内部的开发流程，根据实际情况跟着按照流程走，基本都可以走正循环，提高项目开发效率与效益。
 
 ### 4.  项目的跟进与优化
 
@@ -142,9 +129,9 @@ excerptLength: 500
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前 ERP 采用的主要技术与工具在技术市场上都较为新颖，具有一定的优越性与先进性，但任何事物都具有两面性，因此也存在一些局限性或缺点；
 
-##### 1.1  优越性
+#### 1.1  优越性
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对技术人员来说：
+&nbsp;&nbsp;&nbsp;&nbsp;对技术人员来说：
 
 - 开发体验较好，在一定程度上提升开发效率；
 - 开发工具朝着“轻便”的方向发展，简化了开发流程和操作步骤；
@@ -152,22 +139,22 @@ excerptLength: 500
 - 项目性能提到大幅度提升；
 - ...
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对用户来说：
+&nbsp;&nbsp;&nbsp;&nbsp;对用户来说：
 
 - 网站性能的提升，提高了用户体验；
 - 网站生态越来越美观，更加吸引眼球；
 - ...
 
-##### 1.2  局限性/缺点
+#### 1.2  局限性/缺点
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对技术人员来说：
+&nbsp;&nbsp;&nbsp;&nbsp;对技术人员来说：
 
 - 新技术意味着学习成本的提高；
 - 新技术不太稳定，较多坑没有前人踩过，需要时间和精力解决坑；
 - 新技术兼容性较差，需要指定浏览器以及浏览器的版本；
 - ...
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对用户来说：
+&nbsp;&nbsp;&nbsp;&nbsp;对用户来说：
 
 - 由于兼容性问题，可能需要用户更换不熟悉的浏览器；
 - 有些 bug 可能开发人员以及测试人员也没发现，但是用户发现了，降低用户体验；
@@ -192,23 +179,17 @@ excerptLength: 500
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ERP 采用了比较新的前端技术，正如前面所说，新技术在稳定性、兼容性方面往往还有所不足，例如 Vite 构建工具的兼容性如下：
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/603f78f0-65b1-4af1-bb02-49966ae94254.png)
-
-<center>图 3.2.1 vite 兼容性</center>
+![图 3.2.1 vite 兼容性](./assets/frontArchitecture/vite-compatible.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vue3 兼容性如下：
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/4094c259-8bab-4f16-abb4-d7dc8cccab78.png)
-
-<center>图 3.2.2 Vue3 兼容性</center>
+![图 3.2.2 Vue3 兼容性](./assets/frontArchitecture/vue3-compatible.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于整体的框架不适配、不兼容，若官网有言明解决方案则根据官网来进行适配，若无则只能向用户声明浏览器类型以及版本；<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于 js 脚本个别语法兼容性较差的，我们可以改写为兼容性较好的写法；<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于 CSS 样式个别属性不兼容，我们需要加一些标识来达到兼容的效果，如：<br />
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/BKM7qejmVMopOpj8/img/c435b9f9-75fe-4839-b077-2e78b941360d.png)
-
-<center>图 3.2.3  不同浏览器兼容写法</center>
+![图 3.2.3 不同浏览器兼容写法](./assets/frontArchitecture/css-compatible-preffix.png)
 
 #### 3.  工程化配置与优化
 
@@ -250,9 +231,7 @@ excerptLength: 500
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目优化其实是在深入了解各个方向，比如  http 工作机制、缓存机制、浏览器工作原理、工具链的优化策略、前端框架的原理之后总结出来的一个方案。
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/NybEnB8dVrRBOP13/img/a21fa088-563c-4823-8a94-dc3c1f289cf5.png)
-
-<center>图 3.3.1  前端网络优化网络图</center>
+![图 3.3.1  前端网络优化网络图](./assets/frontArchitecture/optimizing-graph-image.png)
 
 **项目优化空间**
 
@@ -292,13 +271,9 @@ excerptLength: 500
   - 本地缓存；
   - ...
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/NybEnB8dVrRBOP13/img/c0a5b6fc-bb3c-44c6-98c8-75ec6664625a.png)
+![图 3.3.2 图片不同格式的区别](./assets/frontArchitecture/image-type-difference.png)
 
-<center>图 3.3.2  图片不同格式的区别</center>
-
-[请至钉钉文档查看「流程图」](https://alidocs.dingtalk.com/i/nodes/em7AML0b9lBV25Q56zPjWnNyqOD6vwro?iframeQuery=anchorId%253DX02l6uusdy505k5povwxxwq)
-
-<center>图 3.3.3  图片预加载</center>
+![图 3.3.3 图片预加载](./assets/frontArchitecture/lazy-load-image.jpg)
 
 ## 四、结束语
 
