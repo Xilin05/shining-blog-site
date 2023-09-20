@@ -3,39 +3,39 @@ import { navbar } from 'vuepress-theme-hope'
 export const enNavbar = navbar([
   '/',
   {
-    text: '学习相关',
+    text: '前端学习专栏',
     icon: 'read',
-    prefix: '/study/',
-    children: [
-      {
-        text: '分享',
-        prefix: 'sharing/',
-        children: [
-          {
-            text: '前端架构浅析',
-            link: 'frontArchitecture'
-          }
-        ]
-      }
-    ]
+    link: '/study/'
   },
   {
-    text: '工作相关',
+    text: '工作笔记专栏',
     icon: 'keyboard',
-    prefix: '/work/',
-    children: [
-      {
-        text: '笔记',
-        prefix: 'notes/',
-        children: [
-          {
-            text: '线下费用模块梳理与总结',
-            icon: 'note',
-            link: 'offlineReplay'
-          }
-        ]
-      }
-    ]
+    link: '/work/'
+    // prefix: '/work/',
+    // children: [
+    //   {
+    //     text: '技术方案',
+    //     prefix: 'proposal/',
+    //     children: [
+    //       {
+    //         text: '线下费用模块梳理与总结',
+    //         icon: 'note',
+    //         link: 'offline-replay'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     text: '复盘总结',
+    //     prefix: 'notes/',
+    //     children: [
+    //       {
+    //         text: '线下费用模块梳理与总结',
+    //         icon: 'note',
+    //         link: 'offline-replay'
+    //       }
+    //     ]
+    //   }
+    // ]
   },
   {
     text: '代码仓库',

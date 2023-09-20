@@ -17,14 +17,14 @@ export const enSidebar = sidebar({
     //   children: 'structure'
     // },
     {
-      text: '学习相关',
+      text: '前端学习专栏',
       icon: 'creative',
-      // link: 'study/',
       prefix: 'study/',
+      // link: 'study/',
       children: 'structure'
     },
     {
-      text: '工作相关',
+      text: '工作笔记专栏',
       icon: 'creative',
       prefix: 'work/',
       // link: 'work/',

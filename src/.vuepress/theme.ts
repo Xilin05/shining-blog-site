@@ -57,32 +57,32 @@ export default hopeTheme(
         metaLocales: {
           editLink: 'Edit this page on GitHub'
         }
-      },
+      }
 
       /**
        * Chinese locale config
        */
-      '/zh/': {
-        // navbar
-        navbar: zhNavbar,
+      // '/zh/': {
+      //   // navbar
+      //   navbar: zhNavbar,
 
-        // sidebar
-        sidebar: zhSidebar,
+      //   // sidebar
+      //   sidebar: zhSidebar,
 
-        footer: '默认页脚',
+      //   footer: '默认页脚',
 
-        displayFooter: true,
+      //   displayFooter: true,
 
-        blog: {
-          description: '一个前端开发者',
-          intro: '/zh/intro.html'
-        },
+      //   blog: {
+      //     description: '一个前端开发者',
+      //     intro: '/zh/intro.html'
+      //   },
 
-        // page meta
-        metaLocales: {
-          editLink: '在 GitHub 上编辑此页'
-        }
-      }
+      //   // page meta
+      //   metaLocales: {
+      //     editLink: '在 GitHub 上编辑此页'
+      //   }
+      // }
     },
 
     encrypt: {
@@ -106,23 +106,27 @@ export default hopeTheme(
         /**
          * Using Giscus
          */
+
+        // <script src="https://giscus.app/client.js"
+        //   data-repo="Xilin05/shining-blog-site"
+        //   data-repo-id="R_kgDOJjxYrQ"
+        //   data-category="Announcements"
+        //   data-category-id="DIC_kwDOJjxYrc4CZfUd"
+        //   data-mapping="pathname"
+        //   data-strict="0"
+        //   data-reactions-enabled="1"
+        //   data-emit-metadata="0"
+        //   data-input-position="bottom"
+        //   data-theme="preferred_color_scheme"
+        //   data-lang="zh-CN"
+        //   crossorigin="anonymous"
+        //   async>
+        // </script>
         provider: 'Giscus',
-        repo: 'vuepress-theme-hope/giscus-discussions',
-        repoId: 'R_kgDOG_Pt2A',
+        repo: 'Xilin05/shining-blog-site',
+        repoId: 'R_kgDOJjxYrQ',
         category: 'Announcements',
-        categoryId: 'DIC_kwDOG_Pt2M4COD69'
-
-        /**
-         * Using Twikoo
-         */
-        // provider: "Twikoo",
-        // envId: "https://twikoo.ccknbc.vercel.app",
-
-        /**
-         * Using Waline
-         */
-        // provider: "Waline",
-        // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+        categoryId: 'DIC_kwDOJjxYrc4CZfUd'
       },
 
       // Disable features you don’t want here
