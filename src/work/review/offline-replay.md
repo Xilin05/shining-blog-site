@@ -1,5 +1,5 @@
 ---
-date: 2023-02-08
+date: 2023-01-09
 category:
   - 笔记
   - 工作
@@ -9,22 +9,20 @@ tag:
   - ERP系统
   - 复盘总结
 
-sticky: 1
 isOriginal: true
 ---
-<!-- # ERP - \[前端\]线下费用模块梳理与总结 -->
 
-# **线下费用模块梳理与总结**
+# **可配置化页面模块梳理与总结**
 
-公司ERP系统迭代研发中，【1104 - 线下费用】版本的前端开发梳理与总结。
+公司ERP系统迭代研发中，20231114迭代版本的前端开发梳理与总结。
 <!-- more -->
 ## **前言**
 
-在【11-14  线下费用】版本中，根据产品经理提出的规划以及原型设计，该版本中涉及几十个费用模板，且其中的大部分功能、交互一致，为了减少前端的重复工作以及重复代码过多，由张总提出前端可配置化，来达到前端页面配置统一由后端返回而直接生成页面的效果。
+在20231114迭代版本版本中，根据产品经理提出的规划以及原型设计，该版本中涉及几十个列表模板，且其中的大部分功能、交互一致，为了减少前端的重复工作以及重复代码过多，团队内部技术评审提出前端可配置化，来达到前端页面配置统一由后端返回而直接生成页面的效果。
 
-## **1. 需求梳理**
+## 1. 需求梳理
 
-### **1.1 业务逻辑需求**
+### 1.1 业务逻辑需求
 
 #### **1.1.1 通用 tab**
 
@@ -46,7 +44,7 @@ isOriginal: true
 
 展示每个费用 tab 的主要内容，且带有分页器。并且，每个 tab 需要显示的字段有区别，部分特殊单元格需要额外的功能如：复制、链接跳转、弹窗交互、图片显示与放大等，具体可查看需求文档并与产品经理沟通。
 
-需求文档合集：[2022.11.14-线下费用第一期需求-最新](https://alidocs.dingtalk.com/i/nodes/mdvQnONayjBJKgN6gBqNJPY2MeXzp5o0)
+需求文档合集：[ERP系统可配置化页面模块](../proposal/offline-page-configurable.md)
 
 - **行操作按钮组**
 
@@ -54,29 +52,26 @@ isOriginal: true
 
 #### **1.1.2 非通用 tab**
 
-此部分 tab 功能比较复杂，交互上有区别，因此不列为通用 tab，如本期的：测评，刷配件 tab。
+此部分 tab 功能比较复杂，交互上有区别，因此不列为通用 tab，如本期的：非通用 tab-1，非通用 tab-2。
 建议分开单独开发，避免单个组件功能过于复杂，导致后期维护成本高，也可能出现 bug 难以排查的现象。
 tab 的结构布局、功能交互与通用 tab 大同小异。
 
-- **测评**
+- **非通用 tab-1**
+非通用 tab-1 涉及订单的合并拆分，业务逻辑比较繁琐复杂，功能性也比较强，具体需求可以查看非通用 tab-1的需求文档：《2022.11.14-可配置化页面-**需求》（涉及项目业务需求隐私，暂不公开）
 
-测评 tab 涉及订单的合并拆分，业务逻辑比较繁琐复杂，功能性也比较强，具体需求可以查看测评的需求文档：[《2022.11.14-线下费用-测评需求》](https://alidocs.dingtalk.com/i/nodes/D1YKdxGX7EqVQAYRmjrbVe4QrZk95AzP)
+- **非通用 tab-2**
 
-- **刷配件**
+非通用 tab-2 与 非通用 tab-1 类似，虽然不涉及订单合并拆分，但一个记录会有多个订单，需要规整对齐，业务逻辑的复杂程度次于非通用 tab-1，功能性弱于非通用 tab-1，具体需求可以查看需求文档：《2022.11.14-可配置化页面-***需求》（涉及项目业务需求隐私，暂不公开）
 
-刷配件 tab 与测评类型，但是不涉及订单合并拆分，但一个记录会有多个订单，需要规整对齐，业务逻辑的复杂程度次于测评，功能性弱于测评，具体需求可以查看需求文档：[《2022.11.14-线下费用-刷配件需求》](https://alidocs.dingtalk.com/i/nodes/B6L5QAmawMPJMjav6Qbz8q1z09lnK3kb)
-
-### **1.2 前端开发需求**
+### 1.2 前端开发需求
 
 #### **1.2.1 界面需求**
 
-考虑 tab 后期会有多达 30 多个，需要考虑把该 tab 导航列表放在哪个位置较为合理，通过前端小组中专哥的建议，在“线下费用”导航页面下再开辟一个侧边栏，为 tabs 的导航栏供选择不同的 tab，关联右边的页面内容，显示该费用 tab 的具体信息，整体结构布局如下：
+考虑 tab 后期会有多达 30 多个，需要考虑把该 tab 导航列表放在哪个位置较为合理，通过前端小组某师兄的建议，在该模块页面下再开辟一个侧边栏，为 tabs 的导航栏供选择不同的 tab，关联右边的页面内容，显示该tab 的具体信息，整体结构布局如下：
 
-[请至钉钉文档查看「流程图」](https://alidocs.dingtalk.com/i/nodes/mdvQnONayjBJKebmdwv3WPY2MeXzp5o0?iframeQuery=anchorId%253DX02ldld1ydnktnj4r65oy)
+[可配置化模块总布局](./assets/offline-replay/可配置化模块总布局.png)
 
-图 1-2-1  线下费用模块总布局
-
-具体页面 UI 效果参考：[蓝湖  -  线下费用](https://share.lanhuapp.com/#/invite?sid=lX0SvPYs)。
+具体页面 UI 效果参考蓝湖。
 
 页面需要的组件在 ERP 系统中大部分有以往开发好的可以直接用，若有特殊需求可以自己单独再开发组件以支持页面功能。
 
@@ -92,9 +87,9 @@ tab 的结构布局、功能交互与通用 tab 大同小异。
 
 - **添加**
 
-用户有添加新记录的需求，故需要提供添加新数据的功能，一次性可以添加多条数据，同时还需要包含“批量设置”的功能；![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaMVXwApnXxj/img/60054ddd-59b9-4076-86e9-bff34fecbbaf.png?x-oss-process=image/crop,x_0,y_0,w_1790,h_489)
+用户有添加新记录的需求，故需要提供添加新数据的功能，一次性可以添加多条数据，同时还需要包含“批量设置”的功能；
 
-图 1-2-2 “添加”功能中批量设置按钮
+![“添加”功能中批量设置按钮](./assets/offline-replay/“添加”功能中批量设置按钮.png)
 
 - **编辑**
 
@@ -112,21 +107,21 @@ tab 的结构布局、功能交互与通用 tab 大同小异。
 
 #### **1.2.3 其他需求**
 
-## **2. 技术方案**
+## 2. 技术方案
 
-### **2.1 前端技术方案**
+### 2.1 前端技术方案
 
-- **预渲染  -  骨架屏**
+- **预渲染 - 骨架屏**
 
 在本模块中，考虑到一次性请求接口数量较多，且有时数据较大、或因为网络问题可能会导致页面出现空白屏的情况，建议给页面注入骨架屏来代替白屏，在一定程度上提升用户体验。
 
-- **组件渲染  -  匹配筛选**
+- **组件渲染 - 匹配筛选**
 
-前端对“线下费用”模块需要用到的不同组件、下拉选项、参数等都抽离出来，并给定一个标识符用于识别筛选，进入模块的某一个 tab 时发送 http 请求，由后端返回该 tab 的配置数据信息，从数据中提取指定的配置字段，其中包含着一个或多个标识符，前端通过标识符匹配筛选对应的组件，最后组成页面的整体结构。
+前端对“可配置化”模块需要用到的不同组件、下拉选项、参数等都抽离出来，并给定一个标识符用于识别筛选，进入模块的某一个 tab 时发送 http 请求，由后端返回该 tab 的配置数据信息，从数据中提取指定的配置字段，其中包含着一个或多个标识符，前端通过标识符匹配筛选对应的组件，最后组成页面的整体结构。
 
 部分组件需要提供数组对象数据，如下拉框、表格的列配置信息等，也由后端返回后，前端对数据进行处理再注入对应的组件，使其完整。
 
-- **功能按钮  -  方法匹配**
+- **功能按钮 - 方法匹配**
 
 每个按钮都需要执行某个方法，其中涉及按钮的功能(名称)、传参数据等，需要从总体规划好，制定科学合理的传参数据结构，甚至可能有出现  “按钮-  方法”  为   多对一的情况，因此在方法内部还需要做好各种逻辑分支规划。
 
@@ -136,19 +131,17 @@ tab 的结构布局、功能交互与通用 tab 大同小异。
 
 本模块涉及弹窗较多，一次性渲染较多的 dom 节点对性能消耗较大，可能出现页面打开缓慢，执行延迟，不流畅等情况，对于用户来说使用体验十分差，故需要考虑好页面的优化，从一开始就要考虑好全局。
 
-当时在进行开发前，也拟定了一个技术方案，具体可以参考：[《前端-“线下费用”技术方案》](https://docs.dingtalk.com/api/doc/transit?spaceId=5358792513&dentryId=74009393630&queryString=utm_source%3Ddingdoc_doc%26utm_medium%3Ddingdoc_doc_plugin_card)
+当时在进行开发前，也拟定了一个技术方案，具体可以参考：[ERP系统可配置化页面模块](../proposal/offline-page-configurable.md)
 
 注意：其中后端返回的数据结构并没有按照文档中的返回，具体请查看实际返回数据。
 
-### **2.2 后端技术方案**
+### 2.2 后端技术方案
 
-后端没有文档，仅有接口与字段参考：[线下费用  -  后端接口与字段](http://42.192.173.202:20008/?key=offline)
+> 后端没有文档，仅有接口与字段参考：【可配置化 - 后端接口与字段】（涉及团队隐私，暂不公开）
 
-### **2.3 小结**
+## 3. 方案实施
 
-## **3. 方案实施**
-
-### **3.1 前期准备**
+### 3.1 前期准备
 
 前端根据需求与技术方法所述，从把准备工作做好，再将整体到局部，先把页面总体结构写好。
 
@@ -160,7 +153,7 @@ tab 的结构布局、功能交互与通用 tab 大同小异。
 
 整体目录结构如下：
 
-```
+```vb
 offlineExpenses
 ├─ components
 │  ├─ SetAsin
@@ -289,9 +282,9 @@ offlineExpenses
 └─ useMod.ts
 ```
 
-创建文件时，页面主文件、组件主入口文件都为 index.vue，配置文件、接口请求文件、ts 接口文件等都分开放好，具体文件名称与规范可参考：[ERP 后台系统文件与命名规范](https://alidocs.dingtalk.com/i/nodes/m0Xw6OYE4D7VLLzwMLlRVRq13rbjgPM5)。
+创建文件时，页面主文件、组件主入口文件都为`index.vue`，配置文件、接口请求文件、ts 接口文件等都分开放好，具体文件名称与规范根据团队要求进行规范即可。
 
-组件初始化时，vue 文件初始化如下：（仅作参考）
+组件初始化时，vue 文件初始化如下：`（仅作参考）`
 
 ```vue
 <template>
@@ -303,15 +296,15 @@ offlineExpenses
 <style lang="scss" scoped></style>
 ```
 
-api 接口请求文件初始化如下：（仅作参考）
+api 接口请求文件初始化如下：`（仅作参考）`
 
-```ts
+```typescript
 import apiUrl from '@/config/apiUrl'
 import { get, post } from '@/utils/http'
 
 export function getOfflineListAPI(data: Record<string, any> = {}) {
   return get({
-    url: '?????', // '?????' 实际需要的接口地址参数
+    url: 'xxxxx', // 'xxxxx' 实际需要的接口地址参数
     data,
     bfLoading: false
   })
@@ -320,9 +313,9 @@ export function getOfflineListAPI(data: Record<string, any> = {}) {
 // ......
 ```
 
-config 配置文件初始化如下：（仅作参考）
+config 配置文件初始化如下：`（仅作参考）`
 
-```ts
+```typescript
 export default {
   const config = {
     // ......
@@ -334,9 +327,9 @@ export default {
 }
 ```
 
-方法函数文件初始化如下：（仅作参考）
+方法函数文件初始化如下：`（仅作参考）`
 
-```ts
+```typescript
 import { ref } from 'vue'
 
 export function useAction() {
@@ -351,9 +344,9 @@ export function useAction() {
 }
 ```
 
-涉及后端接口调用文件初始化如下：（仅作参考）
+涉及后端接口调用文件初始化如下：`（仅作参考）`
 
-```ts
+```typescript
 import { ref } from 'vue'
 
 export function useMod() {
@@ -374,9 +367,7 @@ export function useMod() {
 
 注意：路由的 name 必须唯一，不能与以往的重复。
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaMVXwApnXxj/img/5db274f7-bb51-47ea-8e1b-95718f499e53.png)
-
-图 3-1-1  路由注册
+![路由注册](./assets/offline-replay/注册路由.png)
 
 #### **3.1.2 页面结构**
 
@@ -444,13 +435,9 @@ export function useMod() {
 
 开发后，页面结构效果如下：
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaMVXwApnXxj/img/4870e050-06a1-4432-9b98-a61642360cb3.png)
+![可配置化整体结构效果（导航栏展开）](./assets/offline-replay/导航栏展开效果.png)
 
-图 3-1-2  线下费用整体结构效果（导航栏展开）
-
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaMVXwApnXxj/img/25cc87c8-77f2-439d-b162-c0ab8bd5301b.png)
-
-图 3-1-3  线下费用整体结构效果（导航栏收起）
+![可配置化整体结构效果（导航栏收起）](./assets/offline-replay/导航栏收起效果.png)
 
 #### **3.1.3 组件/参数抽离**
 
@@ -460,7 +447,7 @@ export function useMod() {
 
 在 offlineExpense -> components  目录下创建“matchTableComponent.ts”文件：
 
-```ts
+```typescript
 import { Ref, reactive } from 'vue'
 import { getAmazonShopListAPI } from '@/api/common.js'
 import Api from '../giftCard/api'
@@ -475,7 +462,7 @@ export default function useMatch() {
       match_key: 'store_search',
       field: 'store_ids',
       components: 'el-select',
-      placeholder: '全部店铺',
+      placeholder: '全部xx',
       filterable: true,
       multiple: true,
       'collapse-tags': true,
@@ -572,14 +559,11 @@ export default function useMatch() {
 
 在每次切换 tab 时，都会调用“getSearchBar”方法，根据后端返回的“search_components”字段中的数组来匹配该 tab 需要的搜索栏控件和参数，前端进行二次处理完毕后，注入表格组件即可。
 
-- 其他
-- 其他
-
-### **3.2 方案实施**
+### 3.2 方案实施
 
 前期工作准备已完成，开始请求接口处理数据、渲染数据视图。
 
-线下费用涉及接口表格：
+可配置化涉及接口表格：
 
 | 接口名称     | 接口地址                   | 备注                 |
 | ------------ | -------------------------- | -------------------- |
@@ -590,7 +574,7 @@ export default function useMatch() {
 | 编辑列表数据 | /offline/common/edit/      | \[post\]             |
 | 列表数据删除 | /offline/common/delete/    | \[post\]支持批量     |
 
-表 3-2-1  线下费用接口集合
+表 3-2-1  可配置化接口集合
 
 #### **3.2.1 树节点请求与处理**
 
@@ -598,9 +582,7 @@ export default function useMatch() {
 
 请求接口后返回数据如下：
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaMVXwApnXxj/img/f37c03ea-eaf3-41a9-aab9-8a9ea4fd623e.png)
-
-图 3-2-1  线下费用 tabs 类型列表
+![可配置化 tabs 类型列表配置接口数据返回](./assets/offline-replay/后端返回结构.png)
 
 【注意】考虑接口返回延迟、无数据等情况，需要做容错处理，例如配置树结构的默认节点、假数据节点、提示错误等。
 
@@ -612,9 +594,7 @@ export default function useMatch() {
 
 数据请求返回结果如下：
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaMVXwApnXxj/img/38097936-9b92-48f0-8360-8882dad3f897.png)
-
-图 3-2-2  线下费用表格配置列表
+![可配置化表格配置列表接口数据返回](./assets/offline-replay/后端返回数据2.png)
 
 接口返回数据解读：
 
@@ -640,9 +620,9 @@ export default function useMatch() {
         // 表头字段配置
         sort_fields: [
           {
-            "field_name": "dianpu", // 列的prop，唯一字段
-            "type": "store", // 数据类型，匹配数据用
-            "name": "店铺", // 列的label，标签，用户看
+            "field_name": "xxxx", // 列的prop，唯一字段
+            "type": "xxxx", // 数据类型，匹配数据用
+            "name": "xxxx", // 列的label，标签，用户看
             "validate_reg": "", // 正则匹配字段，预留字段
             "options": null, // 下拉选项
             "format": "", // 是否需要格式化
@@ -663,8 +643,8 @@ export default function useMatch() {
         // ....
       }
     ]
-    name: "代买礼品卡", // 节点名称
-    type: "amz_gift_card" // 节点类型字段
+    name: "xxxxxx", // 节点名称
+    type: "xxxxxx" // 节点类型字段
   }
 
 }
@@ -672,7 +652,7 @@ export default function useMatch() {
 
 获取数据后，需要对其进行二次处理，再注入表格，处理的格式根据表格组件封装的格式要求分别对搜索栏、表头按钮、表格列可进行如下数据处理：（仅贴出部分核心代码）
 
-```ts
+```typescript
 // 筛选不同tab模块需要的搜索控件
 const matchSearchBar = () => {
   for (const item of tableHeaderConfig.value?.fe_cfg ?? []) {
@@ -775,9 +755,7 @@ const matchColumn = () => {
 
 列表接口请求后返回结果如下：
 
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/WmeonaMVXwApnXxj/img/e4a43aae-7bb1-4850-a9ba-856c4df73623.png)
-
-图 3-2-3  线下费用列表数据返回结果
+![可配置化列表数据返回结果](./assets/offline-replay/后端返回数据3.png)
 
 接口返回数据解读：
 
@@ -785,7 +763,7 @@ const matchColumn = () => {
 {
   "offline_list": [
     {
-      "id": "531570064875323465", // 行id
+      "id": "xxxxxxx", // 行id
       "add_time": "2023-01-12 16:59:19", // 创建时间
       "update_time": "-", // 更新时间
       // 创建人
@@ -799,24 +777,24 @@ const matchColumn = () => {
       // 单元格数据
       "data": [
         {
-          "field_name": "dianpu", // 单元格prop，唯一
+          "field_name": "xxxxx", // 单元格prop，唯一
           "type": "store", // 数据类型
           // 单元格数据
           "field_value": {
-            "string_val": "42", // 店铺id
+            "string_val": "xxx", // 店铺id
             // store详细数据
             "store_val": {
-              "id": "42",
-              "name": "麻搜-MX",
+              "id": "xxx",
+              "name": "xxxxx",
               "status": 0,
-              "country_name": "墨西哥",
-              "country_code": "MX",
+              "country_name": "xxxx",
+              "country_code": "xxxx",
               "authorized_users": null,
               "operator_users": null,
-              "time_zone": "America/Los_Angeles",
-              "currency_symbol": "Mex$",
-              "add_time": "1660287371711",
-              "update_time": "1668133457558",
+              "time_zone": "xxxxxxx",
+              "currency_symbol": "xxxx",
+              "add_time": "xxxxxx",
+              "update_time": "xxxxxxx",
               "entity_id": "1"
             }
           }
@@ -834,7 +812,7 @@ const matchColumn = () => {
 }
 ```
 
-获取数据后，需要对其进行二次处理，再注入表格，处理的格式根据表格组件封装的格式要求，使用“after-data”函数处理后再注入表格，处理代码过长，此处不贴出代码，具体可查看：/offlineExpenses/giftCard/useAction.ts  文件中的“dealAfterData”方法查看详细处理方法。
+获取数据后，需要对其进行二次处理，再注入表格，处理的格式根据表格组件封装的格式要求，使用“after-data”函数处理后再注入表格，处理代码过长，此处不贴出代码，具体可查看：`/offlineExpenses/giftCard/useAction.ts`文件中的“dealAfterData”方法查看详细处理方法。
 
 行尾部操作按钮由于是后端返回，故需要单独处理，采用插槽的方式，再将该部分抽离为组件，注入插槽，以达到配置化的目的与效果。
 
@@ -842,7 +820,7 @@ const matchColumn = () => {
 
 页面包含表头按钮、行尾部操作按钮，因此需要编写方法函数为这些按钮绑定事件，根据不同的按钮，给定不同的 key，根据 key 匹配执行指定的方法，过程涉及传参问题，具体传参需要考虑不同的 tab 以及不同的场景。
 
-所有的函数、方法都需要前端手动写好，这个无法配置化，例如：添加、编辑（设置为同一个方法）、删除、打开弹窗、数据校验、权限判定...等多个方法，根据实际需求进行定制开发，此部分逻辑性较强，功能较为繁琐，因此不贴出代码，具体代码可以参考线下费用模块前端代码。
+所有的函数、方法都需要前端手动写好，这个无法配置化，例如：添加、编辑（设置为同一个方法）、删除、打开弹窗、数据校验、权限判定...等多个方法，根据实际需求进行定制开发，此部分逻辑性较强，功能较为繁琐，因此不贴出代码，具体代码可以参考可配置化模块前端代码。
 
 #### **3.2.5 其他**
 
@@ -858,10 +836,10 @@ const matchColumn = () => {
 
 该模块已上线，具体效果可查看 dev 环境或线上环境。
 
-线上环境：[ERP 跨境电商赋能系统（正式环境）](https://erp.feierfit.com/)
+线上环境：`暂不公开`
 
-测试环境：[ERP 赋能跨境电商系统（测试环境）](https://dev.feierfit.com/)
+测试环境：`暂不公开`
 
 ## **5. 总结**
 
-线下费用模块是整个 ERP 系统中使用了较为新颖的开发模式，运用了“低代码”开发思维
+可配置化模块是整个 ERP 系统中使用了较为新颖的开发模式，运用了“低代码”开发思维

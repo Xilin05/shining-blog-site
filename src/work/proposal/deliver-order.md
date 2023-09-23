@@ -1,6 +1,5 @@
 ---
-title: 【ERP-0417】前端技术方案
-date: 2023-05-09
+date: 2023-04-17
 category:
   - 前端
   - 工作
@@ -8,24 +7,27 @@ tag:
   - 技术方案
   - ERP系统
 
-sticky: 3
+# sticky: 3
 isOriginal: true
+# PageView: true
+excerptLength: 500
 ---
-# **【ERP迭代需求】“送货单&&操作日志”前端技术方案**
+
+# **230417版本迭代技术方案**
+<!-- # **【ERP迭代需求】“送货单&&操作日志”前端技术方案** -->
 
 关于2023年4月17日ERP系统新迭代需求“送货单&&操作日志”的前端开发技术方案。
 <!-- more -->
+
 ## **1. 需求分析**
 
 - **送货单模块**
 
-本模块属于发货计划模块的一个子模块，是整个计划管理模块的其中一个环节，具体业务流程可参考产品需求文档：[2023.04.17-送货单需求](https://alidocs.dingtalk.com/i/nodes/YQBnd5ExVE0D0L59ix56BPp2WyeZqMmz)
+本模块属于发货计划模块的一个子模块，是整个计划管理模块的其中一个环节，具体业务流程可参考产品需求文档：[2023.04.17-送货单需求]
 
 - **操作日志模块**
 
-本模块需求于【0220 -  迭代需求】版本提出，主要用于方便查看用户在本系统中的操作记录，因多种原因故延至本期开发，具体需求可查看[《2023.02.20-日志需求》](https://alidocs.dingtalk.com/i/nodes/em7AML0b9lBV2YX1XllRWnNyqOD6vwro)
-
----
+本模块需求于【0220 - 迭代需求】版本提出，主要用于方便查看用户在本系统中的操作记录，因多种原因故延至本期开发，具体需求可查看[《2023.02.20-日志需求》]
 
 ## **2. 模块分析**
 
@@ -53,15 +55,13 @@ isOriginal: true
 
 页面需要根据操作记录内容的多少，判断是否需要单独一个弹窗展示内容。
 
----
-
 ## **3. 结构设计**
 
 ### **送货单模块**
 
 - **目录结构设计**
 
-```
+```vb
   deliver
   ├─ components
   ├─ create
@@ -159,7 +159,7 @@ const {
 
 - **目录结构设计**
 
-```
+```vb
   operationLog
   ├─ index.vue
   ├─ useApi.ts
@@ -192,7 +192,6 @@ import TablePage from '@/components/models/TablePage/index.vue'
 <style lang="scss" scoped></style>
 ```
 
----
 
 ## **4. 业务与代码逻辑**
 
@@ -201,12 +200,15 @@ import TablePage from '@/components/models/TablePage/index.vue'
 #### **4.1.1 列表**
 
 列表页面比较复杂，  分别有：搜索栏、tabs 切换、表头按钮、刷新按钮、列表行展开、列表行操作按钮、文件列表展示、文本悬浮框、sku 展示产品详情
+
 - 搜索栏：useConfig.ts 文件中编写一个 getSearchBar 函数返回配置结构并传入 table-page 组件；
 - tabs 切换：useConfig.ts 文件中编写一个 getTabs 函数返回配置结构并传入 table-page 组件；
 - 表头按钮：useConfig.ts 文件中编写一个 getBatchbtns 函数返回配置结构并传入 table-page 组件；只有申请中 tab 才有表头按钮
 - 列表行展开：useConfig.ts 中配置列显示时，配置多一行"type: expand"来使用表格的展开功能，具体的展开信息需要在页面组件中根据列的 prop 配对进行显示；
 - 列表行操作：useConfig.ts 文件中编写一个 getColumns 函数的同时，返回 moreConfig 配置结构并传入 table-page 组件；
+
 包含的操作：查看详情、编辑申请信息、编辑到货信息、送货确认、上传 POD、作废送货单
+
   - 重点：需要根据不同的 tab 展示不同的按钮
   - 申请中：详情，编辑(申请信息、送货信息)，作废
   - 送货中：详情，编辑送货信息
@@ -238,9 +240,7 @@ import TablePage from '@/components/models/TablePage/index.vue'
 产品中   绑定 MSKU  为店铺的 MSKU，附件列表可以对文件进行移除。<br />
 产品可以移除，也可以上传附件。<br />
 数据联动：表头选择目的地，店铺等信息后，在产品表格中也要进行展示，但是不予编辑。<br />
-表格校验：
-
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/XJ9LnWvPvkEWlvDe/img/0dc14814-f487-4c82-b104-15b91a23e5be.png)
+表格校验：（详情查看产品需求文档，本文不贴出需求）
 
 目前送货单仅允许选择其中一条物流单进行创建，创建页面中不允许选择其他物流单，需要取消后才能重新选择。
 
@@ -267,5 +267,3 @@ import TablePage from '@/components/models/TablePage/index.vue'
 搜索栏、刷新按钮、文本悬浮框、日志操作详情
 - 搜索栏：useConfig.ts 文件中编写一个 getSearchBar 函数返回配置结构并传入 table-page 组件；
 - 详情：当操作详情单元格内容过多时，需要展示详情按钮，用户点击后弹窗展示操作详情。
-
-![image](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/XJ9LnWvPvkEWlvDe/img/b21f2e64-8d27-45e9-a48b-c20a6382a15f.png?x-oss-process=image/crop,x_129,y_52,w_784,h_474)

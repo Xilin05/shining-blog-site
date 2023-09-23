@@ -15,17 +15,18 @@ description: 这里是个人职业生涯过程中记录信息产出的文档。
 # head:
 #   - - meta
 #     - name: keywords
-#       content: CS,学习路线,编程,计算机专业,程序员,Java,C语言,Python,C++,前端,Go 语言,数据结构,算法,蓝桥杯,大数据,操作系统,安卓,android,mysql,redis,.NET
+#       content:
 ---
 
 工作笔记专栏 - 目录总览
 
+* [经验记录](working-notes/)
 * [复盘总结](review/)
   * [线下费用模块梳理与总结](review/offline-replay.md)
   * [Vue的前端业务开发技巧](review/vue-develop-skill.md)
 
 * [技术方案](proposal/)
-  * [【ERP-0417】前端技术方案](proposal/deliverOrder.md)
+  * [【ERP-0417】前端技术方案](proposal/deliver-order.md)
 
 * [业务理解](business-understanding/)
   * [订单模块浅析](business-understanding/order.md)

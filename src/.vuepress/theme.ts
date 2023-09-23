@@ -87,8 +87,9 @@ export default hopeTheme(
 
     encrypt: {
       config: {
-        '/demo/encrypt.html': ['1234'],
-        '/zh/demo/encrypt.html': ['1234']
+        '/work/proposal/deliver-order.html': ['slyb'],
+        '/work/proposal/offline-page-configurable.html': ['slyb'],
+        '/work/review/offline-replay.html': ['slyb']
       }
     },
 
