@@ -7,7 +7,7 @@ sticky: 20
 breadcrumb: true
 article: false
 description: 这里是个人职业生涯过程中记录信息产出的文档。
-
+pageview: true
 # category:
 #   - 学习路线
 # tag:

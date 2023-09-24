@@ -9,7 +9,7 @@ tag:
 
 # sticky: 3
 isOriginal: true
-# PageView: true
+# pageview: true
 excerptLength: 500
 ---
 

@@ -103,31 +103,41 @@ export default hopeTheme(
       // If you don’t need comment feature, you can remove following option
       // The following config is for demo ONLY, if you need comment feature, please generate and use your own config, see comment plugin documentation for details.
       // To avoid disturbing the theme developer and consuming his resources, please DO NOT use the following config directly in your production environment!!!!!
+
       comment: {
+        /**
+         * Using Waline
+         */
+        provider: 'Waline',
+        serverURL: 'https://leancloud.shining98.top/', // your server url
+        comment: true,
+        copyright: false
+        // 'https://vercel-blog-discussion-mg2azv2v9-xilin05.vercel.app/' // your server url
+
         /**
          * Using Giscus
          */
 
-        // <script src="https://giscus.app/client.js"
-        //   data-repo="Xilin05/shining-blog-site"
-        //   data-repo-id="R_kgDOJjxYrQ"
-        //   data-category="Announcements"
-        //   data-category-id="DIC_kwDOJjxYrc4CZfUd"
-        //   data-mapping="pathname"
-        //   data-strict="0"
-        //   data-reactions-enabled="1"
-        //   data-emit-metadata="0"
-        //   data-input-position="bottom"
-        //   data-theme="preferred_color_scheme"
-        //   data-lang="zh-CN"
-        //   crossorigin="anonymous"
-        //   async>
-        // </script>
-        provider: 'Giscus',
-        repo: 'Xilin05/shining-blog-site',
-        repoId: 'R_kgDOJjxYrQ',
-        category: 'Announcements',
-        categoryId: 'DIC_kwDOJjxYrc4CZfUd'
+        //   // <script src="https://giscus.app/client.js"
+        //   //   data-repo="Xilin05/shining-blog-site"
+        //   //   data-repo-id="R_kgDOJjxYrQ"
+        //   //   data-category="Announcements"
+        //   //   data-category-id="DIC_kwDOJjxYrc4CZfUd"
+        //   //   data-mapping="pathname"
+        //   //   data-strict="0"
+        //   //   data-reactions-enabled="1"
+        //   //   data-emit-metadata="0"
+        //   //   data-input-position="bottom"
+        //   //   data-theme="preferred_color_scheme"
+        //   //   data-lang="zh-CN"
+        //   //   crossorigin="anonymous"
+        //   //   async>
+        //   // </script>
+        //   provider: 'Giscus',
+        //   repo: 'Xilin05/shining-blog-site',
+        //   repoId: 'R_kgDOJjxYrQ',
+        //   category: 'Announcements',
+        //   categoryId: 'DIC_kwDOJjxYrc4CZfUd'
       },
 
       // Disable features you don’t want here
