@@ -13,7 +13,7 @@ isOriginal: true
 pageview: true
 ---
 
-# **（一）入门篇**
+# **1. 入门篇**
 
 Canvas学习第一篇，入门篇。
 <!-- more -->

@@ -13,7 +13,7 @@ tag:
 pageview: true
 ---
 
-# **（一）var, let, const**
+# **1. var, let, const**
 
 ES6学习第一篇，var, let, const。
 <!-- more -->

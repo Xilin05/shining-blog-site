@@ -13,7 +13,7 @@ tag:
 pageview: true
 ---
 
-# **（七）ES6中module的理解与使用**
+# **7. module的理解与使用**
 
 ES6学习第七篇，ES6中module的理解与使用。
 <!-- more -->

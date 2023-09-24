@@ -13,7 +13,7 @@ tag:
 pageview: true
 ---
 
-# **（五）ES6中新增的数据结构Set、Map**
+# **5. 新增的数据结构Set、Map**
 
 ES6学习第五篇，ES6中新增的数据结构Set、Map。
 <!-- more -->

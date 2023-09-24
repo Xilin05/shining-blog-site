@@ -13,7 +13,7 @@ tag:
 pageview: true
 ---
 
-# **（六）ES6中Promise的理解与使用**
+# **6. Promise的理解与使用**
 
 ES6学习第六篇，ES6中Promise的理解与使用。
 <!-- more -->

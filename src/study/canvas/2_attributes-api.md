@@ -13,7 +13,7 @@ isOriginal: true
 pageview: true
 ---
 
-# **（二）属性与API**
+# **2. 属性与API**
 
 Canvas学习第二篇，了解属性与API。
 <!-- more -->
