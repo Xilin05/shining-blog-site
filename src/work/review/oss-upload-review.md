@@ -151,7 +151,7 @@ default: {
 
 根据实际情况分析，我们的erp系统文件上传下载结合了腾讯云存储来进行的，而腾讯云存储的相关文档也提供了相关的api调用，针对这个问题已经有过独立的技术方案文档来阐述和解决，详情可查看：
 
-[《\[ERP\]\[文件上传\]结合腾讯云实时获取上传进度》](https://docs.dingtalk.com/api/doc/transit?spaceId=5358792513&dentryId=97852320256&queryString=utm_source%3Ddingdoc_doc%26utm_medium%3Ddingdoc_doc_plugin_card)
+[《结合腾讯云COS获取上传进度》](../proposal/oss-upload-progress.md)
 
 进度渲染可以利用好数据的作用域以及数据地址共享的原理来形成一个数据关联，起到数据响应式的作用，每次调用腾讯云的上传回调函数来获取当前上传任务的状态，并编写相关的样式来渲染进度。
 
