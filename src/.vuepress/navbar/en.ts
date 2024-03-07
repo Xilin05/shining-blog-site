@@ -38,6 +38,11 @@ export const enNavbar = navbar([
     // ]
   },
   {
+    text: '数据结构与算法专栏',
+    icon: 'read',
+    link: '/interview/'
+  },
+  {
     text: '代码仓库',
     icon: 'github',
     children: [

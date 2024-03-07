@@ -29,6 +29,13 @@ export const enSidebar = sidebar({
       prefix: 'work/',
       // link: 'work/',
       children: 'structure'
+    },
+    {
+      text: '数据结构与算法',
+      icon: 'creative',
+      prefix: 'interview/',
+      // link: 'work/',
+      children: 'structure'
     }
     // 'intro',
     // 'slides'
