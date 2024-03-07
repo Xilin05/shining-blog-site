@@ -19,8 +19,10 @@ article: false
 
 前端学习专栏 - 目录总览
 
-* [Typescript 学习笔记](typescript/)
+* [前端理论学习笔记](theory/)
+* [一些实践](experiment/)
+* [Canvas 学习笔记](canvas/)
 * [ECMAScript 6 学习笔记](es6/)
 * [JavaScript 学习笔记](javascript/)
-* [Canvas 学习笔记](canvas/)
-* [前端理论学习笔记](theory/)
+* [React 学习笔记](react/)
+* [Typescript 学习笔记](typescript/)
