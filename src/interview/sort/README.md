@@ -11,6 +11,8 @@ title: 排序算法
 # star: true
 index: false
 article: false
+dir:
+  order: 2
 ---
 
 排序算法专题 - 目录总览
