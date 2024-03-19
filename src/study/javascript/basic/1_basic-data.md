@@ -17,19 +17,36 @@ pageview: true
 
 ## **1. 数据类型**
 
-在JavaScript中，共有八种数据类型，其又分为三大类：`基本类型`，`引用类型`和`原始类型`。
+在JavaScript中，共有八种数据类型，其又分为两大类：`基本类型` 以及 `引用类型`。
 
-* **基本类型：** 字符串(String)、数值(Number)、布尔(Boolean)、空(Null)、未定义(Undefined)、BigInt(ES10新增)
+* **基本类型：** 字符串(String)、数值(Number)、布尔(Boolean)、空(Null)、未定义(Undefined)、符号(Symbol， ES6新增)、BigInt(ES10新增)
 * **引用类型：** 对象(Object)(数组【Array】和函数【Function】实际上也是对象类型)
-* **原始类型：** 符号(Symbol， ES6新增)
 
-基本类型中，`null`和`undefined`通常被认为是特殊值，这种类型都只有一个值，即其本身。
+基本类型中，`null`和`undefined`通常被认为是特殊值，这种类型都只有一个值，即其本身；`Symbol` 类型的值永远不相等，即便创建的时候传入相同的值。因此，可以用解决属性名冲突的问题（适用于多少编码），做为标记。
+
+```js
+const symbol1 = Symbol();
+const symbol2 = Symbol(42);
+const symbol3 = Symbol('foo');
+
+console.log(typeof symbol1);
+// Expected output: "symbol"
+
+console.log(symbol2 === 42);
+// Expected output: false
+
+console.log(symbol3.toString());
+// Expected output: "Symbol(foo)"
+
+console.log(Symbol('foo') === Symbol('foo'));
+// Expected output: false
+```
 
 引用类型中，数组（Array）和函数（Function）实际上也是对象类型。例如：let obj = {name: "Alice", age: 30};。
 > * 数组：一种特殊的对象，用于表示有序的元素集合。例如：let arr = [1, 2, 3, 4, 5];。
 > * 函数：可调用的对象，用于执行代码块并返回结果。例如：function add(a, b) { return a + b; }。
 
-原始类型Symbol，该类型的对象永远不相等，即便创建的时候传入相同的值。因此，可以用解决属性名冲突的问题（适用于多少编码），做为标记。
+原始类型，
 
 注意：JavaScript是一种动态类型语言，这意味着你不需要在声明变量时指定其数据类型。变量的类型会在运行时根据赋给它的值自动确定。例如，你可以将一个变量从数字类型更改为字符串类型，只需简单地为其分配一个新的字符串值即可。
 
@@ -217,7 +234,7 @@ if (num) {
 
 #### **2.1.4 比较操作**
 
-JS中的比较操作符（例如==、===、!=、!===、>、<等）在比较不同数据类型时，也会触发执行隐式类型转换。
+JS中的比较操作符（例如==、=\==、!=、!===、>、<等）在比较不同数据类型时，也会触发执行隐式类型转换。
 
 当遇到这种情况的时候，JS会尝试将两个值转换为相同的数据类型再进行彼此之间的比较。
 
@@ -331,7 +348,7 @@ console.log(customStr); // 输出 "Custom: 42"
 
 全等运算符（===）执行严格的相等比较，不执行隐式类型转换。
 
-因此，建议在比较值时使用===而不是==，以避免不必要的类型转换。
+因此，建议在比较值时使用=\==而不是==，以避免不必要的类型转换。
 
 ```js
 let num = 42;
