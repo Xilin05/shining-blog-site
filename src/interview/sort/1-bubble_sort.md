@@ -8,7 +8,7 @@ tag:
   - 算法
   - 技术深入
 
-isOriginal: true
+# isOriginal: true
 pageview: true
 order: 1
 ---
