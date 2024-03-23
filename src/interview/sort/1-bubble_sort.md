@@ -8,6 +8,7 @@ tag:
   - 算法
   - 技术深入
 
+isOriginal: true
 pageview: true
 ---
 
@@ -58,7 +59,11 @@ function bubbleSort(arr) {
       // 如果当前元素大于下一个元素，则交换它们
       if (arr[j] > arr[j + 1]) {
         // 使用解构赋值进行元素交换
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        // [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        // 使用临时数据实现交换
+        let temp = arr[j + 1]; // 交换
+        arr[j + 1] = arr[j];
+        arr[j] = temp;
       }
     }
   }
@@ -107,4 +112,4 @@ console.log(sortedNumbers);
 
 ## 参考文章
 
-[LeetCode-JS 通关指南 - 冒泡排序](https://2xiao.github.io/leetcode-js/leetcode/algorithm/sort.html#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-bubble-sort)
+- 图片来源：[LeetCode-JS 通关指南 - 冒泡排序](https://2xiao.github.io/leetcode-js/leetcode/algorithm/sort.html#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-bubble-sort)
