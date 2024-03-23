@@ -10,6 +10,7 @@ tag:
 
 isOriginal: true
 pageview: true
+order: 1
 ---
 
 # **冒泡排序**
