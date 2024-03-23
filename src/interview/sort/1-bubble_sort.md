@@ -8,7 +8,6 @@ tag:
   - 算法
   - 技术深入
 
-isOriginal: true
 pageview: true
 ---
 
@@ -105,3 +104,7 @@ console.log(sortedNumbers);
 - 教学示例：冒泡排序的逻辑相对简单，易于理解，因此在教学过程中，经常被用作for循环和分析算法复杂度的示例。
 
 需要注意的是，虽然冒泡排序在某些场景下是有效的，但其时间复杂度为O(n^2)，在处理大型数据集时可能效率较低。因此，在实际应用中，需要根据具体需求和数据规模来选择合适的排序算法。
+
+## 参考文章
+
+[LeetCode-JS 通关指南 - 冒泡排序](https://2xiao.github.io/leetcode-js/leetcode/algorithm/sort.html#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-bubble-sort)

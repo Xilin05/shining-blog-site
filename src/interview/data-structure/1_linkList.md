@@ -430,3 +430,7 @@ class DoublyLinkedList extends LinkedList {
 ## 4. 应用场景
 
 待完善。
+
+## 参考文章
+
+[LeetCode-JS 通关指南 - 链表](https://2xiao.github.io/leetcode-js/leetcode/ds/linked_list.html)
